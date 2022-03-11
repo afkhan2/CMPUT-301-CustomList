@@ -58,6 +58,7 @@ public class CustomList extends ArrayAdapter<City> {
 
     /**
      * add a city object into the list
+     * @param city - city to add
      */
     public void addCity(City city){
         cities.add(city);
@@ -65,6 +66,7 @@ public class CustomList extends ArrayAdapter<City> {
 
     /**
      * return whether or not the specified city is in the list
+     * @param city - city to check
      */
     public boolean hasCity(City city){
         for (int index = 0; index < cities.size(); index++) {
@@ -75,6 +77,23 @@ public class CustomList extends ArrayAdapter<City> {
             }
         }
         return false;
+    }
+
+    /**
+     * delete a specified city, if it exists
+     * @param city - city to delete
+     */
+    public void deleteCity(City city) {
+        if(this.hasCity(city)) {
+            for (int index = 0; index < cities.size(); index++) {
+                City currentCity = cities.get(index);
+
+                if(currentCity.getCityName().equals(city.getCityName()) && currentCity.getProvinceName().equals(city.getProvinceName())) {
+                    cities.remove(index);
+                    break;
+                }
+            }
+        }
     }
 
 
