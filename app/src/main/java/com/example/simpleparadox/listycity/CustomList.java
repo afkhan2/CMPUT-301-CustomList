@@ -60,7 +60,7 @@ public class CustomList extends ArrayAdapter<City> {
      * add a city object into the list
      */
     public void addCity(City city){
-        return;
+        cities.add(city);
     }
 
 
