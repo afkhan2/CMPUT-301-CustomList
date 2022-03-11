@@ -49,4 +49,12 @@ public class CustomListTest {
 
         assertEquals(list.getCount(), listSize - 1);
     }
+
+    @Test
+    public void countCitiesTest() {
+        list.addCity(new City("Halifax", "NS"));
+        list.addCity(new City("Toronto", "ON"));
+
+        assertEquals(list.countCities(), 2);
+    }
 }
