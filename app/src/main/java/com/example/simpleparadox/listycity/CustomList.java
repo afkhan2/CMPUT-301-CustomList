@@ -63,5 +63,19 @@ public class CustomList extends ArrayAdapter<City> {
         cities.add(city);
     }
 
+    /**
+     * return whether or not the specified city is in the list
+     */
+    public boolean hasCity(City city){
+        for (int index = 0; index < cities.size(); index++) {
+            City currentCity = cities.get(index);
+
+            if(currentCity.getCityName().equals(city.getCityName()) && currentCity.getProvinceName().equals(city.getProvinceName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
