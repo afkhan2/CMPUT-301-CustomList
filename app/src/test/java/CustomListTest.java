@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.example.simpleparadox.listycity.City;
 import com.example.simpleparadox.listycity.CustomList;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -34,5 +33,19 @@ public class CustomListTest {
         list.addCity(newCity);
 
         assertTrue(list.hasCity(newCity));
+    }
+
+    @Test
+    public void deleteCityTest() {
+        City city = new City("Edmonton", "AB");
+        list.addCity(new City("Halifax", "NS"));
+        list.addCity(new City("Edmonton", "AB"));
+        list.addCity(city);
+
+        int listSize = list.getCount();
+
+        list.deleteCity(city);
+
+        assertEquals(listSize, listSize - 1);
     }
 }
